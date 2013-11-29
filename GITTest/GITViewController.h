@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GITViewController : UIViewController
+@interface GITViewController : UIViewController{
+    
+}
+
+-(IBAction)click:(id)sender;
 
 @end
