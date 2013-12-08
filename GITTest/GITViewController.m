@@ -16,6 +16,7 @@
 
 -(IBAction)click:(id)sender{
     NSLog(@"click! ");
+    
 }
 
 - (void)viewDidLoad
