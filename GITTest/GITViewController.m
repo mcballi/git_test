@@ -15,7 +15,7 @@
 @implementation GITViewController
 
 -(IBAction)click:(id)sender{
-    NSLog(@"click! ");
+    NSLog(@"click!");
 }
 
 - (void)viewDidLoad
