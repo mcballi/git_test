@@ -162,6 +162,7 @@
 				EC6731521849242200D51DE6 /* Sources */,
 				EC6731531849242200D51DE6 /* Frameworks */,
 				EC6731541849242200D51DE6 /* Resources */,
+				ECC9692B185515AD00CB272C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -244,6 +245,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		ECC9692B185515AD00CB272C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#Update build number with number of git commits if in release mode\nif [ ${CONFIGURATION} == \"Release\" ]; then\nbuildNumber=$(git rev-list HEAD | wc -l | tr -d ' ')\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\nfi;";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EC6731521849242200D51DE6 /* Sources */ = {
@@ -461,6 +478,7 @@
 				EC67318A1849242200D51DE6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EC67318B1849242200D51DE6 /* Build configuration list for PBXNativeTarget "GITTestTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +487,7 @@
 				EC67318D1849242200D51DE6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
